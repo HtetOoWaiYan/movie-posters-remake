@@ -1,18 +1,18 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
-import Container from './container';
-import Nav from './nav';
+import Container from "./container";
+import Nav from "./nav";
 
 export default function Header() {
   return (
     <header className="navbar bg-base-100">
       <Container>
-        <div className="flex-1">
+        <div className="flex w-full justify-between">
           <Link href="/" title="Home">
             <div className="flex items-center gap-1">
               <Image
-                src="/logo.png"
+                src="/logo192.png"
                 alt="Movie Posters"
                 width={55}
                 height={55}
@@ -22,8 +22,8 @@ export default function Header() {
               </span>
             </div>
           </Link>
+          <Nav />
         </div>
-        <Nav />
       </Container>
     </header>
   );

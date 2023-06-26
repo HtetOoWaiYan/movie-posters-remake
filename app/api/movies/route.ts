@@ -1,13 +1,17 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from "next/server";
 
 const API_KEY = process.env.TMDB_API_KEY;
 
+export const runtime = "edge";
+
 export async function GET() {
-  const value = 'popular';
+  const value = "popular";
 
-  const res = await fetch(`https://api.themoviedb.org/3/movie/${value}?api_key=${API_KEY}`);
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/${value}?api_key=${API_KEY}`
+  );
 
-  const data = await res.json()
+  const data = await res.json();
 
-  return NextResponse.json({ data })
+  return NextResponse.json({ data });
 }

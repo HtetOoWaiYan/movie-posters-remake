@@ -17,6 +17,7 @@
     "*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@opentelemetry/api": "1.4.1",
     "clsx": "1.2.1",
     "daisyui": "3.1.6",
     "next": "latest",

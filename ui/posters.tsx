@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
-import Container from './container';
+import Container from "./container";
 
 interface Movie {
   id: number;
@@ -10,15 +10,7 @@ interface Movie {
   poster_path: string;
 }
 
-interface PosterProps {
-  movie: Movie;
-}
-
-interface PostersProps {
-  movies: Movie[];
-}
-
-const Poster = ({ movie }: PosterProps) => {
+const Poster = ({ movie }: { movie: Movie }) => {
   return (
     <Link
       href={`/posters/${movie.id}`}
@@ -35,7 +27,7 @@ const Poster = ({ movie }: PosterProps) => {
   );
 };
 
-export default function Posters({ movies }: PostersProps) {
+export default function Posters({ movies }: { movies: Movie[] }) {
   return (
     <Container>
       <section className="grid grid-cols-[repeat(auto-fit,_160px)] items-center justify-center gap-4">
