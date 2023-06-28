@@ -3,6 +3,7 @@ import "#/styles/globals.css";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import Container from "#/ui/container";
 import Header from "#/ui/header";
 import Footer from "#/ui/footer";
 
@@ -28,8 +29,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="flex flex-grow items-start justify-center py-16">
-            {children}
+          <main className="flex flex-grow items-start justify-center pb-8">
+            <Container>{children}</Container>
           </main>
           <Footer />
         </div>

@@ -1,16 +1,30 @@
-import Posters from "#/ui/posters";
-
+import Link from "next/link";
+import { Poster, Posters } from "#/ui/posters";
+import type { Movie } from "#/app/api/movies/movie";
 import { getMovies } from "#/app/api/movies/getMovies";
 
+const PosterItem = ({ movie }: { movie: Movie }) => {
+  return (
+    <Link
+      href={`/posters/${movie.id}`}
+      title={`${movie.title} (${movie.release_date.substring(0, 4)})`}
+    >
+      <Poster
+        file_path={movie.poster_path}
+        alt={`${movie.title} (${movie.release_date.substring(0, 4)})`}
+      />
+    </Link>
+  );
+};
+
 export default async function HomePage() {
-  const data = await getMovies();
+  const movies = await getMovies();
 
-  const movies = data.results.map((movie) => ({
-    id: movie.id,
-    title: movie.title,
-    release_date: movie.release_date,
-    poster_path: movie.poster_path,
-  }));
-
-  return <Posters movies={movies} />;
+  return (
+    <Posters>
+      {movies.map((movie) => {
+        return <PosterItem key={movie.id} movie={movie} />;
+      })}
+    </Posters>
+  );
 }

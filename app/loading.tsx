@@ -1,3 +1,7 @@
 export default function Loading() {
-  return <div className="m-auto animate-pulse duration-75">Loading ...</div>;
+  return (
+    <span className="mx-auto animate-pulse text-center duration-75">
+      Loading ...
+    </span>
+  );
 }

@@ -2,7 +2,7 @@ import Container from "./container";
 
 export default function Footer() {
   return (
-    <footer className="footer bg-base-100 text-neutral-content items-center p-8">
+    <footer className="footer bg-base-100 text-neutral-content items-center p-10">
       <Container>
         <p className="mx-auto text-center">
           Movie data from{" "}

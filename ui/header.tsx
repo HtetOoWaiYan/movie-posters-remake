@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Container from "./container";
 import Nav from "./nav";
+import Container from "./container";
 
 export default function Header() {
   return (
@@ -16,6 +16,7 @@ export default function Header() {
                 alt="Movie Posters"
                 width={55}
                 height={55}
+                className="-ml-[10px]"
               />
               <span className="border-b-2 border-dotted border-sky-300 text-sm font-light uppercase">
                 Movie Posters
