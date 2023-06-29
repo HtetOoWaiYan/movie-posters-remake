@@ -1,12 +1,23 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import { getMovie } from "#/app/api/movies/[id]/getMovie";
 import { getPosterFilePath } from "#/lib/getPosterId";
 
-export default async function Page({
-  params: { movieId, posterId },
-}: {
+type Props = {
   params: { movieId: string; posterId: string };
-}) {
+};
+
+export async function generateMetadata({
+  params: { movieId },
+}: Props): Promise<Metadata> {
+  const movie = await getMovie(movieId);
+
+  return {
+    title: movie.title,
+  };
+}
+
+export default async function Page({ params: { movieId, posterId } }: Props) {
   const movie = await getMovie(movieId);
   const filePath = getPosterFilePath(posterId);
 
