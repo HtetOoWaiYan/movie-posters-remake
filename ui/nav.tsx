@@ -8,7 +8,10 @@ import { useSelectedLayoutSegment } from "next/navigation";
 const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
   const segment = useSelectedLayoutSegment();
 
-  const isActive = href === "/" ? segment === null : segment === href.slice(1);
+  const isActive =
+    href === "/"
+      ? segment === null || segment === "posters"
+      : segment === href.slice(1);
 
   return (
     <li
@@ -26,7 +29,7 @@ export default function Nav() {
   return (
     <nav className="flex-none">
       <ul className="menu menu-horizontal px-1">
-        <NavItem href="/">Home</NavItem>
+        <NavItem href="/">Posters</NavItem>
         <NavItem href="/about">About</NavItem>
       </ul>
     </nav>
