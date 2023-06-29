@@ -1,4 +1,4 @@
-import { getBaseUrl } from "#/lib/getEnvs";
+import { getBaseUrl } from "#/lib/getEnv";
 import type { Poster } from "./poster";
 
 import "server-only";

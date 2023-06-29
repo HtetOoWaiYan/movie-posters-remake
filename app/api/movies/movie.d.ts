@@ -5,3 +5,6 @@ export type Movie = {
   poster_path: string;
   backdrop_path?: string;
 };
+
+export type Query = String | undefined;
+export type Sort = "popular" | "top_rated" | "now_playing" | "upcoming";

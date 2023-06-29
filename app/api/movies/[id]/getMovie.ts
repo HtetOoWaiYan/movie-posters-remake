@@ -1,4 +1,4 @@
-import { getBaseUrl } from "#/lib/getEnvs";
+import { getBaseUrl } from "#/lib/getEnv";
 import type { Movie } from "../movie";
 
 import "server-only";

@@ -1,5 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import { getTMDBApiKey } from "#/lib/getEnvs";
+import { type NextRequest, NextResponse } from "next/server";
+import { TMDBApiBaseUrl } from "#/lib/constants";
+import { getTMDBApiKey } from "#/lib/getEnv";
 
 export const runtime = "edge";
 
@@ -8,7 +9,7 @@ export async function GET(
   { params: { id } }: { params: { id: string } }
 ) {
   const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${getTMDBApiKey()}`
+    `${TMDBApiBaseUrl}/movie/${id}?api_key=${getTMDBApiKey()}`
   );
 
   const data = await res.json();
