@@ -45,7 +45,7 @@ export default function Breadcrumbs({ movie }: { movie: Movie }) {
                 />
               </svg>
             )}
-            {query ? "Search" : "Home"}
+            {query ? query : "Home"}
           </Link>
         </li>
         <li>
