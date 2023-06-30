@@ -1,33 +1,36 @@
 import { MetadataRoute } from "next";
+import { getBaseUrl } from "#/lib/getEnv";
+
+const baseUrl = getBaseUrl();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://movieposters.vercel.app",
+      url: baseUrl,
       lastModified: new Date(),
     },
     {
-      url: "https://movieposters.vercel.app/about",
+      url: `${baseUrl}/about`,
       lastModified: new Date(),
     },
     {
-      url: "https://movieposters.vercel.app/posters/268",
+      url: `${baseUrl}/posters/268`,
       lastModified: new Date(),
     },
     {
-      url: "https://movieposters.vercel.app/posters/268/cij4dd21v2Rk2YtUQbV5kW69WB2",
+      url: `${baseUrl}/posters/268/cij4dd21v2Rk2YtUQbV5kW69WB2`,
       lastModified: new Date(),
     },
     {
-      url: "https://movieposters.vercel.app/?q=batman",
+      url: `${baseUrl}/?q=batman`,
       lastModified: new Date(),
     },
     {
-      url: "https://movieposters.vercel.app/posters/268?q=batman",
+      url: `${baseUrl}/posters/268?q=batman`,
       lastModified: new Date(),
     },
     {
-      url: "https://movieposters.vercel.app/posters/268/cij4dd21v2Rk2YtUQbV5kW69WB2?q=batman",
+      url: `${baseUrl}/posters/268/cij4dd21v2Rk2YtUQbV5kW69WB2?q=batman`,
       lastModified: new Date(),
     },
   ];
